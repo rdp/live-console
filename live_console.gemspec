@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'lib/live_console_config'
 
 SPEC = Gem::Specification.new { |s|
@@ -18,7 +17,6 @@ SPEC = Gem::Specification.new { |s|
 	Dir['bin/*'].map(&File.method(:basename)
 		).map(&s.executables.method(:<<))
 	s.require_path 'lib'
-	s.has_rdoc = true
 	s.extra_rdoc_files = Dir['doc/*'].select(&File.method(:file?))
 }
 
