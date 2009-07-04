@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-Gem::Specification.new do |s|
+SPEC = Gem::Specification.new do |s|
   s.name = %q{live_console}
   s.version = "0.2.2"
 
@@ -28,4 +28,8 @@ Gem::Specification.new do |s|
 
   else
   end
+end
+
+if __FILE__ == $0
+  Gem::Builder.new(SPEC).build
 end
