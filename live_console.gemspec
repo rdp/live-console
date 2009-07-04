@@ -17,6 +17,7 @@ SPEC = Gem::Specification.new { |s|
 		).map(&s.executables.method(:<<))
 	s.require_path = 'lib'
 	s.extra_rdoc_files = Dir['doc/*'].select(&File.method(:file?))
+        s.rubygems_version = %q{1.3.1}
 }
 
 if __FILE__ == $0
