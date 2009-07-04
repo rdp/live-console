@@ -6,7 +6,6 @@
 require 'irb'
 require 'irb/frame'
 require 'socket'
-require 'live_console_config'
 
 # LiveConsole provides a socket that can be connected to via netcat or telnet
 # to use to connect to an IRB session inside a running process.  It creates a
