@@ -69,8 +69,9 @@ class LiveConsole
 					begin
 						IRB.start_with_io(irb_io, bind)
 					rescue Errno::EPIPE => e
-						io.stop
+					#	io.stop ??
 					end
+					io.stop
 				end
 			}
 		}
@@ -186,6 +187,7 @@ class GenericIOMethod < IRB::StdioInputMethod
 		@input, @output = input, output
 		@line = []
 		@line_no = 0
+                @stdin = input # fake it into thinking stdin is our input
 	end
 
 	attr_reader :input

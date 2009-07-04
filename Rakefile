@@ -3,9 +3,10 @@ require 'rake/testtask'
 
 require 'fileutils'
 
-require 'lib/live_console_config'
+require 'rubygems'
+load 'live_console.gemspec' # create SPEC
 
-$distname = "#{LiveConsoleConfig::PkgName}-#{LiveConsoleConfig::Version}"
+$distname = "#{SPEC.name}-#{SPEC.version}"
 $tgz = "#{$distname}.tar.gz"
 $tarbz2 = "#{$distname}.tar.bz2"
 $gem = "#{$distname}.gem"
