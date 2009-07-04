@@ -15,7 +15,7 @@ SPEC = Gem::Specification.new { |s|
         
 	Dir['bin/*'].map(&File.method(:basename)
 		).map(&s.executables.method(:<<))
-	s.require_path 'lib'
+	s.require_path = 'lib'
 	s.extra_rdoc_files = Dir['doc/*'].select(&File.method(:file?))
 }
 
