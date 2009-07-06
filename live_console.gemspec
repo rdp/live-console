@@ -34,3 +34,4 @@ if __FILE__ == $0
   # nothing new
   Gem::Builder.new(SPEC).build
 end
+SPEC
