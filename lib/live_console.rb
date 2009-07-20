@@ -157,7 +157,7 @@ module IRB
 	class Context
 		# Fix an IRB bug; it ignores your output method.
 		def output *args
-			@output_method.print *args
+                        args.each{|arg| @output_method.print arg.gsub("\n", "\r\n") }
 		end
 	end
 

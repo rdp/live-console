@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
-require 'live_console'
+require '..\lib\live_console'
 
 print <<-EOF
 This is a demo program for LiveConsole.  It starts a LiveConsole on the
