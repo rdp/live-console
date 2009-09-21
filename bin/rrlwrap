@@ -1,0 +1,18 @@
+puts 'syntax: host port' unless ARGV[0] && ARGV[1]
+
+require 'socket'
+
+incoming = TCPSocket.new ARGV[0], ARGV[1].to_i
+Thread.new {
+ loop {
+  data = incoming.recv 1024
+  print data
+ }
+}
+require 'readline'
+loop {
+ sleep 0.2 if RUBY_PLATFORM =~ /mswin|mingw/ # let data come back on windows without freezing us
+ command = Readline.readline('>>')
+ break if command == 'exit'
+ incoming.write command + "\r\n"
+}

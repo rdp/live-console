@@ -10,7 +10,7 @@ SPEC = Gem::Specification.new do |s|
   s.description = %q{A library to support adding a console to your running application.}
   s.summary = 'A library to support adding a console to your running application.'
   s.email = ["pete.elmore@gmail.com"]
-  s.executables = ["udscat"]
+  s.executables = ["udscat", "rrlwrap"]
   s.extra_rdoc_files = Dir['doc/*'].select(&File.method(:file?))
   s.files = Dir.glob("{bin,doc,lib}/**/*").delete_if { |file|
                 [ /\/rdoc\//i,     # No rdoc

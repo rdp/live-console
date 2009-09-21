@@ -7,7 +7,13 @@ class LiveConsole::IOMethods::SocketIO
 	include LiveConsole::IOMethods::IOMethod
 
 	def start
-		@server ||= TCPServer.new host, port
+             
+                begin
+		  @server ||= TCPServer.new host, port
+                rescue => e
+                  puts "unable to start live console server #{e}"
+                  raise e
+                end
 
 		begin
 			self.raw_input = self.raw_output = server.accept
