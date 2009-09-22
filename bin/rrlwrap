@@ -12,7 +12,7 @@ Thread.new {
 require 'readline'
 loop {
  sleep 0.2 if RUBY_PLATFORM =~ /mswin|mingw/ # let data come back on windows without freezing us
- command = Readline.readline('>>')
+ command = Readline.readline nil
  break if command == 'exit'
  incoming.write command + "\r\n"
 }
